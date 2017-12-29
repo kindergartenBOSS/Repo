@@ -1,78 +1,18 @@
 [
     {
-        "id": "7a134695.4eafd8",
-        "type": "inject",
-        "z": "cb725892.662d28",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "x": 124,
-        "y": 67,
-        "wires": [
-            [
-                "8e22d5ce.f69e68"
-            ]
-        ]
-    },
-    {
-        "id": "8e22d5ce.f69e68",
+        "id": "65ac01b5.1b207",
         "type": "function",
         "z": "cb725892.662d28",
         "name": "Payload",
-        "func": "msg.headers={\n    deviceKey:\"fwGGsYA42fbNOXAm\"\n};\nmsg.payload=\"Temperature,,25.3\";\nmsg.payload=\"Humidity,,62.3\";\nreturn msg;",
+        "func": "msg.headers={\n    deviceKey:\"fwGGsYA42fbNOXAm\"\n};\nmsg.payload=\"Humidity,,50\";\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 263,
-        "y": 137,
+        "x": 259,
+        "y": 193,
         "wires": [
             [
                 "f948b83d.b57458"
             ]
         ]
-    },
-    {
-        "id": "f948b83d.b57458",
-        "type": "http request",
-        "z": "cb725892.662d28",
-        "name": "",
-        "method": "POST",
-        "ret": "txt",
-        "url": "https://api.mediatek.com/mcs/v2/devices/DWob4XMe/datapoints.csv",
-        "tls": "",
-        "x": 411,
-        "y": 135,
-        "wires": [
-            [
-                "6547b05d.65368",
-                "ac61c1fc.0d307"
-            ]
-        ]
-    },
-    {
-        "id": "6547b05d.65368",
-        "type": "http response",
-        "z": "cb725892.662d28",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 650,
-        "y": 118,
-        "wires": []
-    },
-    {
-        "id": "ac61c1fc.0d307",
-        "type": "debug",
-        "z": "cb725892.662d28",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 620,
-        "y": 209,
-        "wires": []
     }
 ]
